@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ArturoController {
     
     
-     @GetMapping("/pelicula_emoji/{nombrePelicula}")
+    @GetMapping("/pelicula_emoji/{nombrePelicula}")
     public String prueba(@PathVariable("nombrePelicula") String nombrePelicula) {
         return nombrePelicula;
     }
