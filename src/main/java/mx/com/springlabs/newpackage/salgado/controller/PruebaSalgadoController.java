@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/salgado")
 
-public class PruebaController {
+public class PruebaSalgadoController {
      @Autowired
     private PruebaService pruebaService;
 
-    @GetMapping("/pelicula_emoji/{nombrePelicula}")
+   /* @GetMapping("/pelicula_emoji/{nombrePelicula}")
     public String prueba(@PathVariable("nombrePelicula") String nombrePelicula) {
         return nombrePelicula;
-    }
+    } */
 }
