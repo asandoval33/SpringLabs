@@ -21,9 +21,11 @@ public class TenizaController {
     public String prueba() {
         return tenizaService.grammar();
     }
-     @GetMapping("/summarize")
-    public String summarize(){
-        return tenizaService.summarize();
+  
+
+    @GetMapping("/summarize/{Texto}")
+    public String summarize(@PathVariable("Texto")String texto){
+        return tenizaService.summarize(texto);
     }
     @GetMapping("/code")
     public String code(){
