@@ -28,10 +28,10 @@ public class TenizaServiceImpl implements TenizaService {
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }
     @Override
-    public String summarize() {
+    public String summarize(String texto) {
           CompletionsRequestModel crm = new CompletionsRequestModel();
         crm.setModel("text-davinci-003");
-        crm.setPrompt("Summarize this for a second-grade student:\\n\\nJupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history. It is named after the Roman god Jupiter.[19] When viewed from Earth, Jupiter can be bright enough for its reflected light to cast visible shadows,[20] and is on average the third-brightest natural object in the night sky after the Moon and Venus.");
+        crm.setPrompt("Summarize this for a second-grade student:\\n\\"+ texto);
         crm.setTemperature(0.7);
         crm.setMax_tokens(64);
         crm.setTop_p(1.0);
@@ -53,7 +53,7 @@ public class TenizaServiceImpl implements TenizaService {
         crm.setTop_p(1.0);
         crm.setFrequency_penalty(0.0);
         crm.setPresence_penalty(0.0);
-        String[] stop = {"\"\"\""};
+       // String[] stop = {"\"\"\""};
         //crm.setStop(stop);
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }

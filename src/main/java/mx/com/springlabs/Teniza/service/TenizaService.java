@@ -5,7 +5,7 @@ package mx.com.springlabs.Teniza.service;
 
 public interface TenizaService {
     public String grammar();
-    public String summarize();
+    public String summarize(String texto);
     public String code();
     public String sql();
     public String recipe();
