@@ -21,6 +21,12 @@ Thymeleaf
 2.7.12
 
 SprinngLabs
+
+Referencias::
+https://www.baeldung.com/spring-rest-http-headers
+https://www.baeldung.com/jackson-object-mapper-tutorial
+https://stackoverflow.com/questions/443499/convert-json-to-map
+https://mkyong.com/spring-boot/spring-rest-error-handling-example/
 */
 @SpringBootApplication
 public class SpringLabsApplication {

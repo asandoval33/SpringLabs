@@ -1,15 +1,20 @@
 package mx.com.springlabs.service;
 
 import mx.com.springlabs.models.CompletionsRequestModel;
-import mx.com.springlabs.repository.OpenAIRepository;
+import mx.com.springlabs.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class PruebaServiceImpl implements PruebaService {
 
     @Autowired
     OpenAIRepository openAIRepository;
+
+    @Autowired
+    PruebaRepository pruebaRepository;
 
     @Override
     public String peliculasAEmoji(String nombrePelicula) {
@@ -25,4 +30,19 @@ public class PruebaServiceImpl implements PruebaService {
         crm.setStop(stop);
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }
+
+    @Override
+    public String guardarArchivo(@RequestParam MultipartFile file, String nombreArchivo) {
+        return pruebaRepository.guardarArchivo(file, nombreArchivo);
+    }
+
+    @Override
+    public String listarArchivos() {
+        return pruebaRepository.listarArchivos();
+    }
+
+    public byte[] buscarArchivo(String nombreArchivo) {
+        return pruebaRepository.buscarArchivo(nombreArchivo);
+    }
+
 }
