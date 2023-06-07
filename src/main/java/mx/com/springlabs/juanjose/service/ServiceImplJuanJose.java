@@ -17,6 +17,19 @@ public class ServiceImplJuanJose implements ServiceJuan {
     OpenAIRepository openAIRepository;
 
     @Override
+    public String conteston(String para, String msg) {
+        CompletionsRequestModel crm = new CompletionsRequestModel();
+        crm.setModel("text-davinci-003");
+        crm.setPrompt("Responde al mensaje de texto de "+para+" que es el siguiente: "+msg+"/n");
+        crm.setTemperature(1.0);
+        crm.setMax_tokens(256);
+        crm.setTop_p(1.0);
+        crm.setFrequency_penalty(0.0);
+        crm.setPresence_penalty(0.0);
+        return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
+    }
+    
+    @Override
     public String naturalLanguage() {
         CompletionsRequestModel crm = new CompletionsRequestModel();
         crm.setModel("text-davinci-003");

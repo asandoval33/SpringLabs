@@ -13,4 +13,5 @@ public interface ServiceJuan {
     public String productNameGenerator();
     public String moodColor();
     public String restaurantReviewCreator();
+    public String conteston(String para, String msg);
 }
