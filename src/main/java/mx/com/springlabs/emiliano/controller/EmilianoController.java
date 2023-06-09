@@ -21,9 +21,34 @@ public class EmilianoController {
     @Autowired
     private PruebaService1 pruebaService;
 
-    @GetMapping("/Turn_by_turn_directions/{dataName}")
+    @GetMapping("/Prueba/{dataName}")
     public String data(@PathVariable("dataName") String dataName) {
         return pruebaService.data(dataName);
+    }
+    
+    @GetMapping("/English_to_other_languages/{dataName}")
+    public String data2(@PathVariable("dataName") String dataName) {
+        return pruebaService.data2(dataName);
+    }
+    
+    @GetMapping("/Ad_from_product_description/{dataName}")
+    public String data3(@PathVariable("dataName") String dataName) {
+        return pruebaService.data3(dataName);
+    }
+    
+    @GetMapping("/Friend_chat/{dataName}")
+    public String data4(@PathVariable("dataName") String dataName) {
+        return pruebaService.data4(dataName);
+    }
+    
+    @GetMapping("/Turn_by_turn_directions/{dataName}")
+    public String data5(@PathVariable("dataName") String dataName) {
+        return pruebaService.data5(dataName);
+    }
+    
+    @GetMapping("/Idea/{dataName}")
+    public String data6(@PathVariable("dataName") String dataName) {
+        return pruebaService.data6(dataName);
     }
     
     //Ejemplo: pelicula_emoji
@@ -31,4 +56,7 @@ public class EmilianoController {
     //EJERCICIO 19: Ad_from_product_description
     //EJERCICIO 32: Friend_chat
     //EJERCICIO 45: Turn_by_turn_directions
+    
+    /* REVISION: */
+    /* " " */
 }
