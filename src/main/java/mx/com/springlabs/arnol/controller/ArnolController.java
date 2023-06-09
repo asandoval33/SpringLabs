@@ -46,6 +46,15 @@ public class ArnolController {
         return arnolserviceinterface.chat(datos);
         
     }
+    @GetMapping("/eslogan/{datos}")
+    public String eslogan(@PathVariable("datos") String datos) {
+        return arnolserviceinterface.eslogan(datos);
+        
+    }
     
     
 }
+
+/* REVISION: 
+            "    " 
+*/
