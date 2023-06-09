@@ -84,5 +84,20 @@ public class arnolService implements arnolServiceInterface {
       
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }
+    @Override
+    public String eslogan(String datos) {
+        CompletionsRequestModel crm = new CompletionsRequestModel();
+        
+        crm.setModel("text-davinci-003");
+        crm.setPrompt("Creame un eslogan para la empresa de la siguiente tematica: \\n\\n\\" + datos + ":");
+        crm.setTemperature(1.0);
+        crm.setMax_tokens(256);
+        crm.setTop_p(1.0);
+        crm.setFrequency_penalty(0.0);
+        crm.setPresence_penalty(0.0);
+        
+      
+        return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
+    }
     
 }

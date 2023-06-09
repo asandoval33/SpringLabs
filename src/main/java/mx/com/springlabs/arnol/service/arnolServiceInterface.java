@@ -13,4 +13,5 @@ public interface arnolServiceInterface {
         public String keywords(String datos);
         public String extractContactInformation(String datos);
         public String chat(String datos);
+        public String eslogan(String datos);
 }

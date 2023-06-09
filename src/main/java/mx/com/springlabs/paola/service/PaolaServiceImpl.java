@@ -72,5 +72,20 @@ public class PaolaServiceImpl implements PaolaService {
         crm.setPresence_penalty(0.0);
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }
+    
+    //EJERCICIO: Generador de letra de una cancion
+    @Override
+    public String letraCancion(String nombreDatos) {
+        CompletionsRequestModel crm = new CompletionsRequestModel();
+        crm.setModel("text-davinci-003");
+        crm.setPrompt("Genera la letra de una cancion con la siguientes palabras:\n" + nombreDatos + "");
+        crm.setTemperature(1.0);
+        crm.setMax_tokens(800);
+        crm.setTop_p(1.0);
+        crm.setFrequency_penalty(0.0);
+        crm.setPresence_penalty(0.0);
+        return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
+        //Muestra la lyrica de la siguiente cancion:
+    }
 
 }
