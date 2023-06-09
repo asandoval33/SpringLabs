@@ -17,4 +17,7 @@ public interface PaolaService {
     public String analogyMaker(String nombreDatos);
 
     public String interviewQuestions(String nombreDatos);
+    
+    public String letraCancion(String nombreDatos);
+    
 }
