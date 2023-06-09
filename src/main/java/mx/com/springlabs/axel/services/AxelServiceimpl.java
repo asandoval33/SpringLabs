@@ -71,7 +71,20 @@ public class AxelServiceimpl implements AxelServices{
     }
     
     
+    @Override
+    public String R2(String R2) {
+        CompletionsRequestModel crm = new CompletionsRequestModel();
+        crm.setModel("text-davinci-003");
+        crm.setPrompt("Quiero que interpretes el siguiente texto en idioma de R2-D2, ademas de agregar un emoji a la expresion" + R2 + ":");
+        crm.setTemperature(1.);
+        crm.setMax_tokens(256);
+        crm.setTop_p(1.0);
+        crm.setFrequency_penalty(0.0);
+        crm.setPresence_penalty(0.0);
+       
+       
+        return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
+    }
+ 
     
-    
-   
 }

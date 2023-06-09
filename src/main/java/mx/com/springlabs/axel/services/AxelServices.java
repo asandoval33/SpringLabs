@@ -13,6 +13,8 @@ public interface AxelServices {
     
     public String chatbot(String chatbot);
     
-    public String horror(String horror);
+    public String horror(String horror);   
     
+    public String R2(String R2);
+
 }
