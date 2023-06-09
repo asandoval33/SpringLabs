@@ -35,7 +35,14 @@ public class AxelController {
         return axelService.horror(horror);
     }
     
-    //Python_to_natural_language/
-    //JavaScript_helper_chatbot
-    //Micro_horror_story_creator
+    @GetMapping("/Idioma_R2-D2/{R2}")
+    public String R2(@PathVariable("R2") String R2) {
+        return axelService.R2(R2);
+    }
+    
+    
+    /*
+    Revision
+    */
+    
 }
