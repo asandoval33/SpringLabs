@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class controllerJuanJose {
 
-
     @Autowired
     private ServiceJuan ServiceJuan;
 
@@ -45,7 +44,7 @@ public class controllerJuanJose {
         return ServiceJuan.restaurantReviewCreator();
     }
 
-    @GetMapping("/conteston/")
+    @GetMapping("/conteston/{para}&{msg}")
     public String conteston(@PathVariable("para") String para, @PathVariable("msg") String msg) {
         return ServiceJuan.conteston(para,msg);
     }

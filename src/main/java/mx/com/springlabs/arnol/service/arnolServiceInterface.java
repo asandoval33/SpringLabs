@@ -9,8 +9,8 @@ package mx.com.springlabs.arnol.service;
  * @author arnol
  */
 public interface arnolServiceInterface {
-        public String natural_language_to_OpenAI_API(String nombrePelicula);
-        public String keywords(String nombrePelicula);
-        public String extractContactInformation(String nombrePelicula);
-        public String chat(String nombrePelicula);
+        public String natural_language_to_OpenAI_API(String datos);
+        public String keywords(String datos);
+        public String extractContactInformation(String datos);
+        public String chat(String datos);
 }

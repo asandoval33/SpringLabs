@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/Francisco")
 public class FranciscoJBMController {
 
     
@@ -34,5 +34,13 @@ public class FranciscoJBMController {
     public String testAPI4(@PathVariable("textoEjemplo") String textoEjemplo) {
         return FranciscoJBMService.testAPI4(textoEjemplo);
     }
+    
+     @GetMapping("/API5/{textoEjemplo}")
+    public String testAPI5(@PathVariable("textoEjemplo") String textoEjemplo) {
+        return FranciscoJBMService.testAPI5(textoEjemplo);
+    }
 
 }
+
+/* REVISION: */
+/* " " */

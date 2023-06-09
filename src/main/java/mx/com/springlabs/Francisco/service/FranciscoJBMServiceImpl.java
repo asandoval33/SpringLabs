@@ -126,4 +126,19 @@ public class FranciscoJBMServiceImpl implements FranciscoJBMService {
         crm.setStop(stop);
         return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
     }
+    
+    @Override
+    public String testAPI5(String textoEjemplo) {
+        CompletionsRequestModel crm = new CompletionsRequestModel();
+        crm.setModel("text-davinci-003");
+        crm.setPrompt("Reescribe el texto siguiente en el idioma murloc del juego World of Warcraft:\n\n\"Hola, muy buenos días!\"\n\nOooggaa!" + textoEjemplo + ":");
+        crm.setTemperature(1.0);
+        crm.setMax_tokens(256);
+        crm.setTop_p(1.0);
+        crm.setFrequency_penalty(0.0);
+        crm.setPresence_penalty(0.0);
+        String[] stop = {"\n"};
+        crm.setStop(stop);
+        return openAIRepository.ejecutaSolicitud(crm).getChoices()[0].getText();
+    }
 }

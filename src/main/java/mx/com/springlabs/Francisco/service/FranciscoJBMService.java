@@ -6,4 +6,5 @@ public interface FranciscoJBMService {
     public String testAPI2(String textoEjemplo);
     public String testAPI3(String textoEjemplo);
     public String testAPI4(String textoEjemplo);
+    public String testAPI5(String textoEjemplo);
 }
