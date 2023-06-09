@@ -41,4 +41,13 @@ public class PaolaController {
     public String interviewQuestions(@PathVariable("nombreDatos") String nombreDatos) {
         return paolaService.interviewQuestions(nombreDatos);
     }
+     //EJERCICIO: Generador de letra de una cancion
+    @GetMapping("/Letra_cancion/{nombreDatos}")
+    public String letraCancion(@PathVariable("nombreDatos") String nombreDatos) {
+        return paolaService.letraCancion(nombreDatos);
+    }
+    /* REVISION
+    Hago entrega de mis 4 actividades, ademas tambien hago entrega de mi otra actividad hice un metodo
+    para pedir una o varios palabras y que este genere la letra de una cancion.
+    */
 }
