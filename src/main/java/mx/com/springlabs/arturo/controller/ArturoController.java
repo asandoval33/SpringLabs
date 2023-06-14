@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/arturo")
 public class ArturoController {
-    //El demonio esta en los detalles
 
     //@Autowired
     //@Resource(name = "arturoServiceImpl1")
@@ -69,13 +70,32 @@ public class ArturoController {
     @GetMapping(value = "/generar_imagen2")
     public ResponseEntity<ByteArrayResource> generarImagen2(@RequestParam() String promt) {
         System.out.println("promt::." + promt);
-        byte[] data=UtilNet.urlABytes(arturoService.generarImagen(promt));
+        byte[] data = UtilNet.urlABytes(arturoService.generarImagen(promt));
         //return arturoService.generarImagen(promt);
         ByteArrayResource resource = new ByteArrayResource(data);
         return ResponseEntity
-                    .ok()
-                    .contentLength(data.length)
-                    .header("Content-type", MediaType.IMAGE_PNG_VALUE)
-                    .body(resource);
+                .ok()
+                .contentLength(data.length)
+                .header("Content-type", MediaType.IMAGE_PNG_VALUE)
+                .body(resource);
+    }
+
+    @GetMapping(value = "/welcome", produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String welcomeAsHTML() {
+        return "<html>\n" + "<header><title>Welcome</title></header>\n"
+                + "<body bgcolor=\"#3A5F9F\" >\n" + "Hello world:#3A5F9F\n" + "</body>\n" + "</html>";
+    }
+
+    @GetMapping(value = "/variacion", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    //public ResponseEntity<String> generaVariacion(@RequestParam MultipartFile image, @RequestParam("n") Integer n, @RequestParam("size") String size) throws IOException {
+    public ResponseEntity<String> generaVariacion(@RequestParam MultipartFile image, @RequestParam("n") Integer numeroVariaciones, @RequestParam("size") Integer size) throws IOException {
+        //return ResponseEntity.ok(uardarArchivopruebaService.guardarArchivo(file, nombreArchivo));
+        return ResponseEntity.ok(arturoService.generaVariacion(image, numeroVariaciones, size));
     }
 }
+
+/*
+Revision:
+
+ */

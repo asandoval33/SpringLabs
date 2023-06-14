@@ -9,6 +9,7 @@ import mx.com.springlabs.repository.OpenAIRepository;
 import mx.com.springlabs.util.UtilJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class ArturoServiceImpl1 implements ArturoService {
@@ -32,7 +33,14 @@ public class ArturoServiceImpl1 implements ArturoService {
         map.put("size", "1024x1024");
         Map<String, Object> mapResul = UtilJson.jsonToModel(arturoRepository.ejecutaSolicitudDallE(map), Map.class);
         System.out.println("mapResul::" + mapResul);
-        return (String)((LinkedHashMap)((ArrayList)mapResul.get("data")).get(0)).get("url");
+        return (String) ((LinkedHashMap) ((ArrayList) mapResul.get("data")).get(0)).get("url");
     }
+
+    @Override
+    public String generaVariacion(MultipartFile image, int n, int size) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 
 }
