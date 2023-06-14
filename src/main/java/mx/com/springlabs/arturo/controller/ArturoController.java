@@ -87,6 +87,12 @@ public class ArturoController {
                 + "<body bgcolor=\"#3A5F9F\" >\n" + "Hello world:#3A5F9F\n" + "</body>\n" + "</html>";
     }
 
+    /*
+curl --location --request GET 'http://localhost:8080/arturo/variacion' \
+--form 'image=@"/C:/images/estrellada.jpg"' \
+--form 'n="3"' \
+--form 'size="1"'
+    */
     @GetMapping(value = "/variacion", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     //public ResponseEntity<String> generaVariacion(@RequestParam MultipartFile image, @RequestParam("n") Integer n, @RequestParam("size") String size) throws IOException {
     public ResponseEntity<String> generaVariacion(@RequestParam MultipartFile image, @RequestParam("n") Integer numeroVariaciones, @RequestParam("size") Integer size) throws IOException {
